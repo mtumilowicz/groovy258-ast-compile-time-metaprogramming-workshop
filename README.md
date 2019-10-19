@@ -11,5 +11,6 @@
     * https://github.com/rzwitserloot/lombok/blob/master/src/core/lombok/AllArgsConstructor.java
     * https://github.com/rzwitserloot/lombok/blob/master/src/core/lombok/javac/handlers/HandleConstructor.java
 * https://github.com/groovy/groovy-core/blob/master/src/main/org/codehaus/groovy/transform/LogASTTransformation.java
+* https://github.com/jbaumann/ASTTransformation-Requires
 * @ToString, @Immutable, @Delegate
 * See [instructions here](http://melix.github.io/ast-workshop)
