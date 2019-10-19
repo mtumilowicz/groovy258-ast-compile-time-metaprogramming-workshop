@@ -1,3 +1,2 @@
 rootProject.name = 'groovy258-ast-compile-time-metaprogramming-workshop'
-include 'exercise1'
-
+include 'exercise1-solution'
