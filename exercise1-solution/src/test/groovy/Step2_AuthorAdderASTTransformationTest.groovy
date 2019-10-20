@@ -1,4 +1,4 @@
-class AuthorAdderASTTransformationTest2 extends GroovyTestCase {
+class Step2_AuthorAdderASTTransformationTest extends GroovyTestCase {
 
     void testASTTransformationShouldBeDebuggableFromIDE() {
         assertScript '''
