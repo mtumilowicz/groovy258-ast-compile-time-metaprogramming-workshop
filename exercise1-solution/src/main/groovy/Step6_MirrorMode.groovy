@@ -7,6 +7,6 @@ import java.lang.annotation.Target
 
 @Retention(RetentionPolicy.SOURCE)
 @Target([ElementType.METHOD])
-@GroovyASTTransformationClass("MirrorModeASTTransformation")
-@interface MirrorMode {
+@GroovyASTTransformationClass("Step6_MirrorModeASTTransformation")
+@interface Step6_MirrorMode {
 }

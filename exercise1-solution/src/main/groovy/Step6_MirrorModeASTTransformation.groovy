@@ -11,7 +11,7 @@ import org.codehaus.groovy.transform.AbstractASTTransformation
 import org.codehaus.groovy.transform.GroovyASTTransformation
 
 @GroovyASTTransformation(phase = CompilePhase.SEMANTIC_ANALYSIS)
-class MirrorModeASTTransformation extends AbstractASTTransformation {
+class Step6_MirrorModeASTTransformation extends AbstractASTTransformation {
     @Override
     void visit(final ASTNode[] nodes, final SourceUnit source) {
         if (nodes.length != 2) return
