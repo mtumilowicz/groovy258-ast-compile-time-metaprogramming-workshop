@@ -1,6 +1,6 @@
 
 
-class AuthorAdderASTTransformationTest extends GroovyTestCase {
+class Step1_AuthorAdderASTTransformationTest extends GroovyTestCase {
     void testThatAuthorExists() {
         assert $AUTHOR == 'MTU'
     }
