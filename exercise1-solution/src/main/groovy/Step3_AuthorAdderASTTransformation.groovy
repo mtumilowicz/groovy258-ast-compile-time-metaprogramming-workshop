@@ -8,13 +8,13 @@ import org.codehaus.groovy.transform.AbstractASTTransformation
 import org.codehaus.groovy.transform.GroovyASTTransformation
 
 @GroovyASTTransformation(phase = CompilePhase.SEMANTIC_ANALYSIS)
-class AuthorAdderASTTransformation3 extends AbstractASTTransformation {
+class Step3_AuthorAdderASTTransformation extends AbstractASTTransformation {
     @Override
     void visit(final ASTNode[] nodes, final SourceUnit source) {
         if (nodes.length != 2) return
         if (nodes[0] instanceof AnnotationNode && nodes[1] instanceof ClassNode) {
             def field = new AstBuilder().buildFromSpec {
-                fieldNode '$AUTHOR3', ACC_PUBLIC | ACC_FINAL | ACC_STATIC, String, this.class, {
+                fieldNode '$STEP3_AUTHOR', ACC_PUBLIC | ACC_FINAL | ACC_STATIC, String, this.class, {
                     constant 'MTU'
                 }
             }
