@@ -9,7 +9,7 @@ import java.lang.annotation.Target
 
 @Retention(RetentionPolicy.SOURCE)
 @Target([ElementType.TYPE])
-@GroovyASTTransformationClass("AuthorAdderASTTransformation5")
-@interface Author5 {
+@GroovyASTTransformationClass("Step5_AuthorAdderASTTransformation")
+@interface Step5_Author {
     String value();
 }
