@@ -1,5 +1,8 @@
 # groovy258-ast-compile-time-metaprogramming-workshop
 
+* https://plugins.jetbrains.com/plugin/9345-jdt-astview
+* http://notatube.blogspot.com/2010/12/project-lombok-creating-custom.html
+* https://en.wikipedia.org/wiki/Abstract_syntax_tree (image)
 * https://groovy-lang.org/metaprogramming.html#_compile_time_metaprogramming
 * https://www.ibm.com/developerworks/library/j-lombok/j-lombok-pdf.pdf
 * https://www.youtube.com/watch?v=hLBahy6lPWI
