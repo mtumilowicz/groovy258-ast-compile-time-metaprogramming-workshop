@@ -22,7 +22,7 @@ class Step4_AuthorAdderASTTransformationAnswer extends AbstractASTTransformation
             def annotation = nodes[0]
             def value = annotation.getMember('value')
             if (value instanceof ConstantExpression) {
-                nodes[1].addField('$STEP4_AUTHOR', ACC_PUBLIC | ACC_FINAL | ACC_STATIC, ClassHelper.STRING_TYPE, value)
+                nodes[1].addField('$STEP4_AUTHOR_ANSWERS', ACC_PUBLIC | ACC_FINAL | ACC_STATIC, ClassHelper.STRING_TYPE, value)
             } else {
                 source.addError(new SyntaxException("Invalid value for annotation", annotation.lineNumber, annotation.columnNumber))
             }

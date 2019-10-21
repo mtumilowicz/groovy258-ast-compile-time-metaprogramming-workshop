@@ -13,7 +13,7 @@ class Step5_AuthorAdderASTTransformationAnswerTest extends GroovyTestCase {
             @answers.Step5_AuthorAnswer('John Doe')
             @ASTTest(phase=SEMANTIC_ANALYSIS, value={
                 assert node instanceof ClassNode
-                def fn = node.getDeclaredField('$STEP5_AUTHOR')
+                def fn = node.getDeclaredField('$STEP5_AUTHOR_ANSWERS')
                 assert fn instanceof FieldNode
                 assert fn.type == STRING_TYPE
                 assert fn.static
@@ -25,7 +25,7 @@ class Step5_AuthorAdderASTTransformationAnswerTest extends GroovyTestCase {
             })
             class Foo {
             }
-            assert Foo.$STEP5_AUTHOR == 'John Doe'
+            assert Foo.$STEP5_AUTHOR_ANSWERS == 'John Doe'
         '''
     }
 }

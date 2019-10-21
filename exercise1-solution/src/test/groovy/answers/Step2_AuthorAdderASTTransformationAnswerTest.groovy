@@ -6,7 +6,7 @@ class Step2_AuthorAdderASTTransformationAnswerTest extends GroovyTestCase {
         assertScript '''
             class Foo {
             }
-            assert Foo.$AUTHOR2 == 'MTU'
+            assert Foo.$AUTHOR_ANSWERS2 == 'MTU'
         '''
     }
 }

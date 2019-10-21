@@ -2,14 +2,14 @@ package answers
 
 class Step1_AuthorAdderASTTransformationAnswerTest extends GroovyTestCase {
     void testThatAuthorExists() {
-        assert $AUTHOR == 'MTU'
+        assert $AUTHOR_ANSWERS == 'MTU'
     }
 
     void testASTTransformationShouldBeDebuggableFromIDE() {
         assertScript '''
             class Foo {
             }
-            assert Foo.$AUTHOR == 'MTU'
+            assert Foo.$AUTHOR_ANSWERS == 'MTU'
         '''
     }
 }

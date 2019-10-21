@@ -7,7 +7,7 @@ class Step3_AuthorAdderASTTransformationAnswerTest extends GroovyTestCase {
             @answers.Step3_AuthorAnswer
             class Foo {
             }
-            assert Foo.$STEP3_AUTHOR == 'MTU'
+            assert Foo.$STEP3_AUTHOR_ANSWERS == 'MTU'
         '''
     }
 }
