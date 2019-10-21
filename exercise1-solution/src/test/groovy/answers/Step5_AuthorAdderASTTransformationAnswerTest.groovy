@@ -1,14 +1,16 @@
-class Step5_AuthorAdderASTTransformationTest extends GroovyTestCase {
+package answers
+
+class Step5_AuthorAdderASTTransformationAnswerTest extends GroovyTestCase {
 
     void testUsingASTTest() {
-        assertScript '''import Step5_Author
+        assertScript '''import answers.Step5_AuthorAnswer
             import groovy.transform.ASTTest
             import org.codehaus.groovy.ast.*
             import org.codehaus.groovy.ast.expr.ConstantExpression
             import static org.codehaus.groovy.ast.ClassHelper.*
             import static org.codehaus.groovy.control.CompilePhase.*
 
-            @Step5_Author('John Doe')
+            @answers.Step5_AuthorAnswer('John Doe')
             @ASTTest(phase=SEMANTIC_ANALYSIS, value={
                 assert node instanceof ClassNode
                 def fn = node.getDeclaredField('$STEP5_AUTHOR')

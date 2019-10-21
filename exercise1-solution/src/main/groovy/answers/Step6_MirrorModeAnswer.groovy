@@ -1,3 +1,5 @@
+package answers
+
 import org.codehaus.groovy.transform.GroovyASTTransformationClass
 
 import java.lang.annotation.ElementType
@@ -7,6 +9,6 @@ import java.lang.annotation.Target
 
 @Retention(RetentionPolicy.SOURCE)
 @Target([ElementType.METHOD])
-@GroovyASTTransformationClass("Step6_MirrorModeASTTransformation")
-@interface Step6_MirrorMode {
+@GroovyASTTransformationClass('answers.Step6_MirrorModeASTTransformationAnswer')
+@interface Step6_MirrorModeAnswer {
 }

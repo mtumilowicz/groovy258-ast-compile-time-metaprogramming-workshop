@@ -1,4 +1,4 @@
-
+package answers
 
 import org.codehaus.groovy.transform.GroovyASTTransformationClass
 
@@ -9,7 +9,6 @@ import java.lang.annotation.Target
 
 @Retention(RetentionPolicy.SOURCE)
 @Target([ElementType.TYPE])
-@GroovyASTTransformationClass("Step4_AuthorAdderASTTransformation")
-@interface Step4_Author {
-    String value();
+@GroovyASTTransformationClass('answers.Step3_AuthorAdderASTTransformationAnswer')
+@interface Step3_AuthorAnswer {
 }

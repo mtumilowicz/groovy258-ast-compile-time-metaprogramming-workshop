@@ -1,6 +1,6 @@
+package answers
 
-
-class Step1_AuthorAdderASTTransformationTest extends GroovyTestCase {
+class Step1_AuthorAdderASTTransformationAnswerTest extends GroovyTestCase {
     void testThatAuthorExists() {
         assert $AUTHOR == 'MTU'
     }

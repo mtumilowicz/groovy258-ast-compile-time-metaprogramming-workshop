@@ -1,11 +1,11 @@
+package answers
 
-
-class Step6_MirrorModeASTTransformationTest extends GroovyTestCase {
+class Step6_MirrorModeASTTransformationAnswerTest extends GroovyTestCase {
 
     void testShouldMirrorMethodCall() {
-        assertScript '''import Step6_MirrorMode
+        assertScript '''import answers.Step6_MirrorModeAnswer
             class Foo {
-                @Step6_MirrorMode
+                @answers.Step6_MirrorModeAnswer
                 void test() {
                     nltnirp 'Mirror mode!'
                     nltnirp 'Mirror mode2!'
