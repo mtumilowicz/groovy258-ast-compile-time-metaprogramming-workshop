@@ -3,7 +3,10 @@ package answers
 class Step6_MirrorModeASTTransformationAnswerTest extends GroovyTestCase {
 
     void testShouldMirrorMethodCall() {
-            new Foo().test()
+        def buffer = new ByteArrayOutputStream()
+        System.out = new PrintStream(buffer)
+        new Foo().test()
+        assert buffer.toString() == 'Mirror mode!\r\nMirror mode2!\r\n'
     }
 
     private class Foo {
