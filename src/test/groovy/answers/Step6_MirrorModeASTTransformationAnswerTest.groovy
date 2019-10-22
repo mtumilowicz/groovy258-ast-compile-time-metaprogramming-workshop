@@ -1,12 +1,19 @@
 package answers
 
-class Step6_MirrorModeASTTransformationAnswerTest extends GroovyTestCase {
+import spock.lang.Specification
 
-    void testShouldMirrorMethodCall() {
+class Step6_MirrorModeASTTransformationAnswerTest extends Specification {
+
+    def 'testShouldMirrorMethodCall'() {
+        given:
         def buffer = new ByteArrayOutputStream()
         System.out = new PrintStream(buffer)
+
+        when:
         new Foo().test()
-        assert buffer.toString() == 'Mirror mode!\r\nMirror mode2!\r\n'
+
+        then:
+        buffer.toString() == 'Mirror mode!\r\nMirror mode2!\r\n'
     }
 
     private class Foo {

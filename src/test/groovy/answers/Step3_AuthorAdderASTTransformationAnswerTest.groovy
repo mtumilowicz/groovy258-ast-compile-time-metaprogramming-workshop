@@ -1,9 +1,13 @@
 package answers
 
-class Step3_AuthorAdderASTTransformationAnswerTest extends GroovyTestCase {
+import answers.Step3_AuthorAnswer
+import spock.lang.Specification
 
-    void testASTTransformationShouldBeDebuggableFromIDE() {
-        assert Foo.$STEP3_AUTHOR_ANSWERS == 'MTU'
+class Step3_AuthorAdderASTTransformationAnswerTest extends Specification {
+
+    def 'testASTTransformationShouldBeDebuggableFromIDE'() {
+        expect:
+        Foo.$STEP3_AUTHOR_ANSWERS == 'MTU'
     }
 
     @Step3_AuthorAnswer
