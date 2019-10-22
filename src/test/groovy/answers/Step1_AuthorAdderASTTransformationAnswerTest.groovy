@@ -6,10 +6,9 @@ class Step1_AuthorAdderASTTransformationAnswerTest extends GroovyTestCase {
     }
 
     void testASTTransformationShouldBeDebuggableFromIDE() {
-        assertScript '''
-            class Foo {
-            }
             assert Foo.$AUTHOR_ANSWERS == 'MTU'
-        '''
+    }
+
+    private class Foo {
     }
 }
