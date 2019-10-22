@@ -2,7 +2,7 @@ package answers
 
 import spock.lang.Specification
 
-class Step6_MirrorModeASTTransformationAnswerTest extends Specification {
+class Step6_ReverseASTAnswerTest extends Specification {
 
     def 'testShouldMirrorMethodCall'() {
         given:
@@ -17,7 +17,7 @@ class Step6_MirrorModeASTTransformationAnswerTest extends Specification {
     }
 
     private class Foo {
-        @Step6_MirrorModeAnswer
+        @Step6_ReverseAnswer
         void test() {
             nltnirp 'Mirror mode!'
             nltnirp 'Mirror mode2!'

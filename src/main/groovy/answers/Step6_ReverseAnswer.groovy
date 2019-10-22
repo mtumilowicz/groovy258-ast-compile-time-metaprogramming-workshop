@@ -9,6 +9,6 @@ import java.lang.annotation.Target
 
 @Retention(RetentionPolicy.SOURCE)
 @Target([ElementType.METHOD])
-@GroovyASTTransformationClass('answers.Step6_MirrorModeASTTransformationAnswer')
-@interface Step6_MirrorModeAnswer {
+@GroovyASTTransformationClass('answers.Step6_ReverseASTAnswer')
+@interface Step6_ReverseAnswer {
 }

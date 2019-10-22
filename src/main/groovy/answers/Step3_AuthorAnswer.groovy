@@ -9,6 +9,6 @@ import java.lang.annotation.Target
 
 @Retention(RetentionPolicy.SOURCE)
 @Target([ElementType.TYPE])
-@GroovyASTTransformationClass('answers.Step3_AuthorAdderASTTransformationAnswer')
+@GroovyASTTransformationClass('answers.Step3_AuthorASTAnswer')
 @interface Step3_AuthorAnswer {
 }

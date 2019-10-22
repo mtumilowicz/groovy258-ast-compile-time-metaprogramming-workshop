@@ -20,5 +20,5 @@ import org.codehaus.groovy.control.CompilePhase
     assert initialExpr instanceof ConstantExpression
     assert initialExpr.text == 'John Doe'
 })
-class Step5_AuthorAdderASTTransformationAnswerASTTest {
+class Step5_AuthorTest {
 }

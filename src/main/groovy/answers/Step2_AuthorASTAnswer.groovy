@@ -9,7 +9,7 @@ import org.codehaus.groovy.transform.AbstractASTTransformation
 import org.codehaus.groovy.transform.GroovyASTTransformation
 
 @GroovyASTTransformation(phase = CompilePhase.CONVERSION)
-class Step2_AuthorAdderASTTransformationAnswer extends AbstractASTTransformation {
+class Step2_AuthorASTAnswer extends AbstractASTTransformation {
     @Override
     void visit(final ASTNode[] nodes, final SourceUnit source) {
         source.AST.classes.each { node ->

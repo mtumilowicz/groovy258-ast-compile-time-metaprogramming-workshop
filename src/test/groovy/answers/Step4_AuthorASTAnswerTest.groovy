@@ -3,7 +3,7 @@ package answers
 import answers.Step4_AuthorAnswer
 import spock.lang.Specification
 
-class Step4_AuthorAdderASTTransformationAnswerTest extends Specification {
+class Step4_AuthorASTAnswerTest extends Specification {
 
     def 'testASTTransformationShouldBeDebuggableFromIDE'() {
         expect:

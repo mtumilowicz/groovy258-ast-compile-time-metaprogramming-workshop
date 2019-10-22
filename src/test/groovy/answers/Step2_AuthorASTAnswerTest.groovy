@@ -2,16 +2,15 @@ package answers
 
 import spock.lang.Specification
 
-class Step1_AuthorAdderASTTransformationAnswerTest extends Specification {
-
+class Step2_AuthorASTAnswerTest extends Specification {
     def 'testThatAuthorExists'() {
         expect:
-        $AUTHOR_ANSWERS == 'MTU'
+        $AUTHOR_ANSWERS2 == 'MTU'
     }
 
     def 'testASTTransformationShouldBeDebuggableFromIDE'() {
         expect:
-        Foo.$AUTHOR_ANSWERS == 'MTU'
+        Foo.$AUTHOR_ANSWERS2 == 'MTU'
     }
 
     private class Foo {

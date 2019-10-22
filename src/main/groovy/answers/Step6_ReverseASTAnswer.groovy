@@ -13,7 +13,7 @@ import org.codehaus.groovy.transform.AbstractASTTransformation
 import org.codehaus.groovy.transform.GroovyASTTransformation
 
 @GroovyASTTransformation(phase = CompilePhase.SEMANTIC_ANALYSIS)
-class Step6_MirrorModeASTTransformationAnswer extends AbstractASTTransformation {
+class Step6_ReverseASTAnswer extends AbstractASTTransformation {
     @Override
     void visit(final ASTNode[] nodes, final SourceUnit source) {
         if (nodes.length != 2) return
