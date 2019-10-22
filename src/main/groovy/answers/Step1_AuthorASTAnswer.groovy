@@ -16,7 +16,7 @@ class Step1_AuthorASTAnswer extends AbstractASTTransformation {
         List<ClassNode> classes = source.getAST().getClasses()
         for (ClassNode node: classes) {
             node.addField(
-                    '$AUTHOR_ANSWERS',
+                    '$STEP1_AUTHOR_ANSWER',
                     ACC_PUBLIC | ACC_STATIC | ACC_FINAL,
                     ClassHelper.STRING_TYPE,
                     new ConstantExpression('MTU')

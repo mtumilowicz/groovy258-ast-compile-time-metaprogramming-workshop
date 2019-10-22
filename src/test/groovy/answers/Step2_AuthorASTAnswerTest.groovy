@@ -3,14 +3,15 @@ package answers
 import spock.lang.Specification
 
 class Step2_AuthorASTAnswerTest extends Specification {
+
     def 'testThatAuthorExists'() {
         expect:
-        $AUTHOR_ANSWERS2 == 'MTU'
+        $STEP2_AUTHOR_ANSWER == 'MTU'
     }
 
     def 'testASTTransformationShouldBeDebuggableFromIDE'() {
         expect:
-        Foo.$AUTHOR_ANSWERS2 == 'MTU'
+        Foo.$STEP2_AUTHOR_ANSWER == 'MTU'
     }
 
     private class Foo {

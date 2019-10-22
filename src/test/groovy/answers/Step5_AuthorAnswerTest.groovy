@@ -10,7 +10,7 @@ import org.codehaus.groovy.control.CompilePhase
 @Step5_AuthorAnswer('John Doe')
 @ASTTest(phase = CompilePhase.SEMANTIC_ANALYSIS, value = {
     assert node instanceof ClassNode
-    def fn = node.getDeclaredField('$STEP5_AUTHOR_ANSWERS')
+    def fn = node.getDeclaredField('$STEP5_AUTHOR_ANSWER')
     assert fn instanceof FieldNode
     assert fn.type == ClassHelper.STRING_TYPE
     assert fn.static
@@ -20,5 +20,5 @@ import org.codehaus.groovy.control.CompilePhase
     assert initialExpr instanceof ConstantExpression
     assert initialExpr.text == 'John Doe'
 })
-class Step5_AuthorTest {
+class Step5_AuthorAnswerTest {
 }

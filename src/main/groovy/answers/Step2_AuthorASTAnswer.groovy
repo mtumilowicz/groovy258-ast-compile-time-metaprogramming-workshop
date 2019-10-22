@@ -14,7 +14,7 @@ class Step2_AuthorASTAnswer extends AbstractASTTransformation {
     void visit(final ASTNode[] nodes, final SourceUnit source) {
         source.AST.classes.each { node ->
             def field = new AstBuilder().buildFromSpec {
-                fieldNode '$AUTHOR_ANSWERS2', ACC_PUBLIC | ACC_FINAL | ACC_STATIC, String, this.class, {
+                fieldNode '$STEP2_AUTHOR_ANSWER', ACC_PUBLIC | ACC_FINAL | ACC_STATIC, String, this.class, {
                     constant 'MTU'
                 }
             }

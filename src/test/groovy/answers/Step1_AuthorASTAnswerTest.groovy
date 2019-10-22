@@ -6,12 +6,12 @@ class Step1_AuthorASTAnswerTest extends Specification {
 
     def 'testThatAuthorExists'() {
         expect:
-        $AUTHOR_ANSWERS == 'MTU'
+        $STEP1_AUTHOR_ANSWER == 'MTU'
     }
 
     def 'testASTTransformationShouldBeDebuggableFromIDE'() {
         expect:
-        Foo.$AUTHOR_ANSWERS == 'MTU'
+        Foo.$STEP1_AUTHOR_ANSWER == 'MTU'
     }
 
     private class Foo {
