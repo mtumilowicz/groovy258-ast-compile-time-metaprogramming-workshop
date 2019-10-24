@@ -19,7 +19,7 @@ class Step6_ReverseASTAnswer extends AbstractASTTransformation {
         if (nodes.length != 2) return
         if (nodes[0] instanceof AnnotationNode && nodes[1] instanceof MethodNode) {
             def trn = new MirrorTransformer(source)
-            trn.visitMethod(nodes[1] as MethodNode)
+            trn.visitMethod nodes[1]
         }
     }
 
@@ -37,7 +37,7 @@ class Step6_ReverseASTAnswer extends AbstractASTTransformation {
 
         @Override
         Expression transform(final Expression exp) {
-            def res = super.transform(exp)
+            def res = super.transform exp
             if (res instanceof MethodCallExpression && res.method instanceof ConstantExpression) {
                 res.method = new ConstantExpression(res.method.text.reverse())
             }

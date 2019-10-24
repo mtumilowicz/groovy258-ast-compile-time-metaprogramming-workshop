@@ -17,7 +17,7 @@ class Step2_AuthorASTAnswer extends AbstractASTTransformation {
                     constant 'MTU'
                 }
             }
-            node.addField(field[0])
+            node.addField field[0]
         }
     }
 }

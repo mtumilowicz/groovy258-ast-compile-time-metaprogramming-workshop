@@ -18,11 +18,11 @@ class Step5_AuthorASTAnswer extends AbstractASTTransformation {
         if (nodes.length != 2) return
         if (nodes[0] instanceof AnnotationNode && nodes[1] instanceof ClassNode) {
             def annotation = nodes[0]
-            def value = annotation.getMember('value')
+            def value = annotation.getMember 'value'
             if (value instanceof ConstantExpression) {
                 nodes[1].addField('$STEP5_AUTHOR_ANSWER', ACC_PUBLIC | ACC_FINAL | ACC_STATIC, ClassHelper.STRING_TYPE, value)
             } else {
-                source.addError(new SyntaxException("Invalid value for annotation", annotation.lineNumber, annotation.columnNumber))
+                source.addError new SyntaxException("Invalid value for annotation", annotation.lineNumber, annotation.columnNumber)
             }
         }
     }
