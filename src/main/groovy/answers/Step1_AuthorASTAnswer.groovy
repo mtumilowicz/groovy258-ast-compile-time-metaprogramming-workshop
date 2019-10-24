@@ -2,7 +2,6 @@ package answers
 
 import org.codehaus.groovy.ast.ASTNode
 import org.codehaus.groovy.ast.ClassHelper
-import org.codehaus.groovy.ast.ClassNode
 import org.codehaus.groovy.ast.expr.ConstantExpression
 import org.codehaus.groovy.control.CompilePhase
 import org.codehaus.groovy.control.SourceUnit
@@ -13,9 +12,8 @@ import org.codehaus.groovy.transform.GroovyASTTransformation
 class Step1_AuthorASTAnswer extends AbstractASTTransformation {
     @Override
     void visit(final ASTNode[] nodes, final SourceUnit source) {
-        List<ClassNode> classes = source.getAST().getClasses()
-        for (ClassNode node: classes) {
-            node.addField(
+        source.AST.classes.each {
+            it.addField(
                     '$STEP1_AUTHOR_ANSWER',
                     ACC_PUBLIC | ACC_STATIC | ACC_FINAL,
                     ClassHelper.STRING_TYPE,

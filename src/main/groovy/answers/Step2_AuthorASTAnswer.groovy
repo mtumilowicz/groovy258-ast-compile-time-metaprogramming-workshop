@@ -1,7 +1,6 @@
 package answers
 
 import org.codehaus.groovy.ast.ASTNode
-import org.codehaus.groovy.ast.FieldNode
 import org.codehaus.groovy.ast.builder.AstBuilder
 import org.codehaus.groovy.control.CompilePhase
 import org.codehaus.groovy.control.SourceUnit
@@ -18,7 +17,7 @@ class Step2_AuthorASTAnswer extends AbstractASTTransformation {
                     constant 'MTU'
                 }
             }
-            node.addField(field[0] as FieldNode)
+            node.addField(field[0])
         }
     }
 }
