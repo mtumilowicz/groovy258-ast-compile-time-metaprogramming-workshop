@@ -1,7 +1,6 @@
 package workshop
 
 import org.codehaus.groovy.ast.ASTNode
-import org.codehaus.groovy.ast.builder.AstBuilder
 import org.codehaus.groovy.control.CompilePhase
 import org.codehaus.groovy.control.SourceUnit
 import org.codehaus.groovy.transform.AbstractASTTransformation
@@ -13,15 +12,11 @@ class Step2_AuthorASTWorkshop extends AbstractASTTransformation {
     @Override
     void visit(final ASTNode[] nodes, final SourceUnit source) {
         source.AST.classes.each { node ->
-            def field = new AstBuilder().buildFromSpec {
-                fieldNode '$STEP2_AUTHOR_WORKSHOP',
-                        ACC_PUBLIC | ACC_FINAL | ACC_STATIC,
-                        String,
-                        this.class,
-                        {
-                            constant 'MTU'
-                        }
-            }
+            def field = null // create field using AstBuilder()
+            // hint: buildFromSpec
+            // fieldNode
+            // rest is quite identical to Step1
+
             node.addField field[0]
         }
     }
