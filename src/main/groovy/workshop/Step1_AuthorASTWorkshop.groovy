@@ -1,25 +1,13 @@
 package workshop
 
-import org.codehaus.groovy.ast.ASTNode
-import org.codehaus.groovy.ast.ClassHelper
-import org.codehaus.groovy.ast.expr.ConstantExpression
-import org.codehaus.groovy.control.CompilePhase
-import org.codehaus.groovy.control.SourceUnit
-import org.codehaus.groovy.transform.AbstractASTTransformation
-import org.codehaus.groovy.transform.GroovyASTTransformation
+// annotate as a groovy ast transformation, hint: GroovyASTTransformation
+// phase: during AST creation, hint: CompilePhase.CONVERSION
+// class should extends AbstractASTTransformation
+// add class to resources/META-INF/services/org.codehaus.groovy.transform.ASTTransformation
+class Step1_AuthorASTWorkshop {
 
-@GroovyASTTransformation(phase = CompilePhase.CONVERSION)
-class Step1_AuthorASTWorkshop extends AbstractASTTransformation {
+    // implement visit method
+    // add public static final field $STEP1_AUTHOR_WORKSHOP with value MTU to each class
+    // hint: source.AST.classes, addField, ACC_PUBLIC, ClassHelper.STRING_TYPE, ConstantExpression
 
-    @Override
-    void visit(final ASTNode[] nodes, final SourceUnit source) {
-        source.AST.classes.each {
-            it.addField(
-                    '$STEP1_AUTHOR_WORKSHOP',
-                    ACC_PUBLIC | ACC_STATIC | ACC_FINAL,
-                    ClassHelper.STRING_TYPE,
-                    new ConstantExpression('MTU')
-            )
-        }
-    }
 }
