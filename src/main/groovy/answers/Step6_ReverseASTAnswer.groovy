@@ -14,6 +14,7 @@ import org.codehaus.groovy.transform.GroovyASTTransformation
 
 @GroovyASTTransformation(phase = CompilePhase.SEMANTIC_ANALYSIS)
 class Step6_ReverseASTAnswer extends AbstractASTTransformation {
+
     @Override
     void visit(final ASTNode[] nodes, final SourceUnit source) {
         if (nodes.length != 2) return
@@ -24,6 +25,7 @@ class Step6_ReverseASTAnswer extends AbstractASTTransformation {
     }
 
     private static class MirrorTransformer extends ClassCodeExpressionTransformer {
+
         private final SourceUnit source
 
         MirrorTransformer(final SourceUnit source) {

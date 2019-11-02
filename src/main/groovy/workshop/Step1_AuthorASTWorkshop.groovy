@@ -8,8 +8,9 @@ import org.codehaus.groovy.control.SourceUnit
 import org.codehaus.groovy.transform.AbstractASTTransformation
 import org.codehaus.groovy.transform.GroovyASTTransformation
 
-@GroovyASTTransformation(phase= CompilePhase.CONVERSION)
+@GroovyASTTransformation(phase = CompilePhase.CONVERSION)
 class Step1_AuthorASTWorkshop extends AbstractASTTransformation {
+
     @Override
     void visit(final ASTNode[] nodes, final SourceUnit source) {
         source.AST.classes.each {

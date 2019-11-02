@@ -11,6 +11,7 @@ import org.codehaus.groovy.transform.GroovyASTTransformation
 
 @GroovyASTTransformation(phase = CompilePhase.SEMANTIC_ANALYSIS)
 class Step3_AuthorASTAnswer extends AbstractASTTransformation {
+
     @Override
     void visit(final ASTNode[] nodes, final SourceUnit source) {
         if (nodes.length != 2) return
