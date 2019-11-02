@@ -17,9 +17,13 @@ class Step3_AuthorASTAnswer extends AbstractASTTransformation {
         if (nodes.length != 2) return
         if (nodes[0] instanceof AnnotationNode && nodes[1] instanceof ClassNode) {
             def field = new AstBuilder().buildFromSpec {
-                fieldNode '$STEP3_AUTHOR_ANSWER', ACC_PUBLIC | ACC_FINAL | ACC_STATIC, String, this.class, {
-                    constant 'MTU'
-                }
+                fieldNode '$STEP3_AUTHOR_ANSWER',
+                        ACC_PUBLIC | ACC_FINAL | ACC_STATIC,
+                        String,
+                        this.class,
+                        {
+                            constant 'MTU'
+                        }
             }
             nodes[1].addField field[0]
         }

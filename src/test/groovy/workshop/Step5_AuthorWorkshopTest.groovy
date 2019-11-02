@@ -7,7 +7,7 @@ import org.codehaus.groovy.ast.FieldNode
 import org.codehaus.groovy.ast.expr.ConstantExpression
 import org.codehaus.groovy.control.CompilePhase
 
-@Step5_AuthorWorkshop('John Doe')
+@Step5_AuthorWorkshop('XYZ')
 @ASTTest(phase = CompilePhase.SEMANTIC_ANALYSIS, value = {
     assert node instanceof ClassNode
     def fn = node.getDeclaredField('$STEP5_AUTHOR_WORKSHOP')
@@ -18,7 +18,7 @@ import org.codehaus.groovy.control.CompilePhase
     assert fn.final
     def initialExpr = fn.initialExpression
     assert initialExpr instanceof ConstantExpression
-    assert initialExpr.text == 'John Doe'
+    assert initialExpr.text == 'XYZ'
 })
 class Step5_AuthorWorkshopTest {
 }

@@ -6,10 +6,10 @@ class Step5_AuthorASTWorkshopTest extends Specification {
 
     def 'testUsingASTTest'() {
         expect:
-        Foo.$STEP5_AUTHOR_WORKSHOP == 'John Doe'
+        Foo.$STEP5_AUTHOR_WORKSHOP == 'XYZ'
     }
 
-    @Step5_AuthorWorkshop('John Doe')
+    @Step5_AuthorWorkshop('XYZ')
     private class Foo {
     }
 }
