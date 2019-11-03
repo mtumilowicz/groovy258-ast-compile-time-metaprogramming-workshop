@@ -11,5 +11,5 @@ import java.lang.annotation.Target
 @Target([ElementType.TYPE])
 @GroovyASTTransformationClass('workshop.Step4_AuthorASTWorkshop')
 @interface Step4_AuthorWorkshop {
-    String value();
+    String value()
 }
