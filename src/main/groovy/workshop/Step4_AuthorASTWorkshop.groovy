@@ -1,13 +1,8 @@
 package workshop
 
 import org.codehaus.groovy.ast.ASTNode
-import org.codehaus.groovy.ast.AnnotationNode
-import org.codehaus.groovy.ast.ClassHelper
-import org.codehaus.groovy.ast.ClassNode
-import org.codehaus.groovy.ast.expr.ConstantExpression
 import org.codehaus.groovy.control.CompilePhase
 import org.codehaus.groovy.control.SourceUnit
-import org.codehaus.groovy.syntax.SyntaxException
 import org.codehaus.groovy.transform.AbstractASTTransformation
 import org.codehaus.groovy.transform.GroovyASTTransformation
 
@@ -16,15 +11,14 @@ class Step4_AuthorASTWorkshop extends AbstractASTTransformation {
 
     @Override
     void visit(final ASTNode[] nodes, final SourceUnit source) {
-        if (nodes.length != 2) return
-        if (nodes[0] instanceof AnnotationNode && nodes[1] instanceof ClassNode) {
-            def annotation = nodes[0]
-            def value = annotation.getMember 'value'
-            if (value instanceof ConstantExpression) {
-                nodes[1].addField('$STEP4_AUTHOR_WORKSHOP', ACC_PUBLIC | ACC_FINAL | ACC_STATIC, ClassHelper.STRING_TYPE, value)
-            } else {
-                source.addError new SyntaxException("Invalid value for annotation", annotation.lineNumber, annotation.columnNumber)
-            }
-        }
+        // get annotation, get class, hint: nodes[0], nodes[1]
+        def annotation = null
+        def annotatedClass = null
+        // verify if annotatedClass is a class, otherwise error: Only for classes
+        // hint: source.addError, SyntaxException
+        // get value of an annotation, hint: getMember
+        def value = null
+        // verify if value is an ConstantExpression, otherwise error: Invalid value for annotation
+        // add field $STEP4_AUTHOR_WORKSHOP to the annotated class, hint: previous steps
     }
 }
