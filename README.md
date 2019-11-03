@@ -30,3 +30,5 @@
      *      information about the AST can be retrieved from this object. 
      */
     void visit(ASTNode nodes[], SourceUnit source);
+    
+    https://github.com/mtumilowicz/java-annotations-retention-policy
