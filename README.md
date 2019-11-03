@@ -6,16 +6,11 @@
 * https://www.ibm.com/developerworks/library/j-lombok/j-lombok-pdf.pdf
 * https://www.youtube.com/watch?v=hLBahy6lPWI
 * http://melix.github.io/ast-workshop/
-* https://github.com/bsideup/groovyastconsole
-* https://touk.pl/blog/2015/08/16/all-field-constructor-in-groovy/
 * https://github.com/rzwitserloot/lombok/tree/master/src/core/lombok
     * https://github.com/rzwitserloot/lombok/tree/master/src/core/lombok/core
     * https://github.com/rzwitserloot/lombok/blob/master/src/core/lombok/AllArgsConstructor.java
     * https://github.com/rzwitserloot/lombok/blob/master/src/core/lombok/javac/handlers/HandleConstructor.java
 * https://github.com/groovy/groovy-core/blob/master/src/main/org/codehaus/groovy/transform/LogASTTransformation.java
-* https://github.com/jbaumann/ASTTransformation-Requires
-* @ToString, @Immutable, @Delegate
-* See [instructions here](http://melix.github.io/ast-workshop)
 
     /**
      * The method is invoked when an AST Transformation is active. For local transformations, it is invoked once
@@ -83,4 +78,4 @@
         * global AST transformations are applied transparently, globally, as soon as they are found on compile classpath
         * local AST transformations are applied by annotating the source code with markers. Unlike global AST transformations, local AST transformations may support parameters.
     
-    
+# lombok digression
