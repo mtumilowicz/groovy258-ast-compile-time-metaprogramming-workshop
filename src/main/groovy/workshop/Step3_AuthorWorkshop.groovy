@@ -1,14 +1,7 @@
 package workshop
 
-import org.codehaus.groovy.transform.GroovyASTTransformationClass
-
-import java.lang.annotation.ElementType
-import java.lang.annotation.Retention
-import java.lang.annotation.RetentionPolicy
-import java.lang.annotation.Target
-
-@Retention(RetentionPolicy.SOURCE)
-@Target([ElementType.TYPE])
-@GroovyASTTransformationClass('workshop.Step3_AuthorASTWorkshop')
+// annotation should be discarded by compiler, hint: RetentionPolicy.SOURCE
+// should be used only on classes, hint: ElementType.TYPE
+// should be linked with workshop.Step3_AuthorASTWorkshop class, hint: @GroovyASTTransformationClass
 @interface Step3_AuthorWorkshop {
 }
