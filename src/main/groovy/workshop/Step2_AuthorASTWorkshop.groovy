@@ -11,13 +11,14 @@ class Step2_AuthorASTWorkshop extends AbstractASTTransformation {
 
     @Override
     void visit(final ASTNode[] nodes, final SourceUnit source) {
-        source.AST.classes.each { node ->
-            def field = null // create field using AstBuilder()
+        source.AST.classes.each {
+            def field = [] // create field using AstBuilder()
             // hint: buildFromSpec
             // fieldNode
             // rest is quite identical to Step1
+            // field name: $STEP2_AUTHOR_ANSWER
 
-            node.addField field[0]
+            it.addField field[0]
         }
     }
 }
