@@ -9,6 +9,10 @@ repositories {
     mavenCentral()
 }
 
+test {
+    exclude '**/workshop*'
+}
+
 dependencies {
     compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.5.8'
     testCompile group: 'org.spockframework', name: 'spock-core', version: '1.3-groovy-2.5'
