@@ -1,8 +1,8 @@
-package answers
+package workshop
 
 import spock.lang.Specification
 
-class Step6_ReverseASTAnswerTest extends Specification {
+class Step5_ReverseASTWorkshopTest extends Specification {
 
     def 'testShouldMirrorMethodCall'() {
         given:
@@ -17,7 +17,7 @@ class Step6_ReverseASTAnswerTest extends Specification {
     }
 
     private class Foo {
-        @Step6_ReverseAnswer
+        @Step5_ReverseWorkshop
         void test() {
             nltnirp 'Mirror mode!'
             nltnirp 'Mirror mode2!'

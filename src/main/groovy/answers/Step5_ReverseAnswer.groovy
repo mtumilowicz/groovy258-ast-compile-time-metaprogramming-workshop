@@ -9,6 +9,6 @@ import java.lang.annotation.Target
 
 @Retention(RetentionPolicy.SOURCE)
 @Target([ElementType.METHOD])
-@GroovyASTTransformationClass('answers.Step6_ReverseASTAnswer')
-@interface Step6_ReverseAnswer {
+@GroovyASTTransformationClass('answers.Step5_ReverseASTAnswer')
+@interface Step5_ReverseAnswer {
 }

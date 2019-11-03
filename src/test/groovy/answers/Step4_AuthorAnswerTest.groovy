@@ -1,4 +1,4 @@
-package workshop
+package answers
 
 import groovy.transform.ASTTest
 import org.codehaus.groovy.ast.ClassHelper
@@ -7,10 +7,10 @@ import org.codehaus.groovy.ast.FieldNode
 import org.codehaus.groovy.ast.expr.ConstantExpression
 import org.codehaus.groovy.control.CompilePhase
 
-@Step5_AuthorWorkshop('XYZ')
+@Step4_AuthorAnswer('XYZ')
 @ASTTest(phase = CompilePhase.SEMANTIC_ANALYSIS, value = {
     assert node instanceof ClassNode
-    def fn = node.getDeclaredField('$STEP5_AUTHOR_WORKSHOP')
+    def fn = node.getDeclaredField('$STEP4_AUTHOR_ANSWER')
     assert fn instanceof FieldNode
     assert fn.type == ClassHelper.STRING_TYPE
     assert fn.static
@@ -20,5 +20,5 @@ import org.codehaus.groovy.control.CompilePhase
     assert initialExpr instanceof ConstantExpression
     assert initialExpr.text == 'XYZ'
 })
-class Step5_AuthorWorkshopTest {
+class Step4_AuthorAnswerTest {
 }
