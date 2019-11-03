@@ -7,6 +7,7 @@ import org.codehaus.groovy.transform.AbstractASTTransformation
 import org.codehaus.groovy.transform.GroovyASTTransformation
 
 @GroovyASTTransformation(phase = CompilePhase.CONVERSION)
+// add class to resources/META-INF/services/org.codehaus.groovy.transform.ASTTransformation
 class Step2_AuthorASTWorkshop extends AbstractASTTransformation {
 
     @Override
