@@ -51,4 +51,20 @@
     tree structure, so these do not have to be represented as separate nodes. Likewise, a syntactic construct like 
     an if-condition-then expression may be denoted by means of a single node with three branches.
     
+    Semantic analysis or context sensitive analysis is a process in compiler construction, usually after parsing, to 
+    gather necessary semantic information from the source code.[1] It usually includes type checking, or makes sure 
+    a variable is declared before use
     
+    Abstract syntax trees are data structures widely used in compilers to represent the structure of program code. An 
+    AST is usually the result of the syntax analysis phase of a compiler.
+    
+    An AST has several properties that aid the further steps of the compilation process:
+    
+    An AST can be edited and enhanced with information such as properties and annotations for every element it 
+    contains. Such editing and annotation is impossible with the source code of a program, since it would imply 
+    changing it.
+    Compared to the source code, an AST does not include inessential punctuation and delimiters (braces, semicolons, 
+    parentheses, etc.).
+    An AST usually contains extra information about the program, due to the consecutive stages of analysis by the 
+    compiler. For example, it may store the position of each element in the source code, allowing the compiler to print 
+    useful error messages.
