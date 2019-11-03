@@ -13,18 +13,17 @@ class Step3_AuthorASTAnswer extends AbstractASTTransformation {
 
     @Override
     void visit(final ASTNode[] nodes, final SourceUnit source) {
-        def decoratedClass = nodes[1]
-        if (decoratedClass instanceof ClassNode) {
-            def field = new AstBuilder().buildFromSpec {
-                fieldNode '$STEP3_AUTHOR_ANSWER',
-                        ACC_PUBLIC | ACC_FINAL | ACC_STATIC,
-                        String,
-                        this.class,
-                        {
-                            constant 'MTU'
-                        }
-            }
-            decoratedClass.addField field[0]
+        def annotatedClass = nodes[1]
+        if (!annotatedClass instanceof ClassNode) return
+        def field = new AstBuilder().buildFromSpec {
+            fieldNode '$STEP3_AUTHOR_ANSWER',
+                    ACC_PUBLIC | ACC_FINAL | ACC_STATIC,
+                    String,
+                    this.class,
+                    {
+                        constant 'MTU'
+                    }
         }
+        annotatedClass.addField field[0]
     }
 }
