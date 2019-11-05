@@ -1,20 +1,23 @@
 # groovy258-ast-compile-time-metaprogramming-workshop
 
-* http://notatube.blogspot.com/2010/12/project-lombok-creating-custom.html
-* https://en.wikipedia.org/wiki/Abstract_syntax_tree
-* https://groovy-lang.org/metaprogramming.html#_compile_time_metaprogramming
-* https://www.ibm.com/developerworks/library/j-lombok/j-lombok-pdf.pdf
-* https://www.youtube.com/watch?v=hLBahy6lPWI
-* https://www.slideshare.net/SpringCentral/groovy-asttransforms-paulkingsep2014
-* http://melix.github.io/ast-workshop/
-* https://github.com/rzwitserloot/lombok/tree/master/src/core/lombok
-    * https://github.com/rzwitserloot/lombok/tree/master/src/core/lombok/core
-    * https://github.com/rzwitserloot/lombok/blob/master/src/core/lombok/AllArgsConstructor.java
-    * https://github.com/rzwitserloot/lombok/blob/master/src/core/lombok/javac/handlers/HandleConstructor.java
-* https://github.com/groovy/groovy-core/blob/master/src/main/org/codehaus/groovy/transform/LogASTTransformation.java
-* https://eli.thegreenplace.net/2009/02/16/abstract-vs-concrete-syntax-trees
-* http://emmanuelrosa.com/articles/how-to-create-your-first-groovy-ast-transformation/
+* references
+    * http://notatube.blogspot.com/2010/12/project-lombok-creating-custom.html
+    * https://en.wikipedia.org/wiki/Abstract_syntax_tree
+    * https://groovy-lang.org/metaprogramming.html#_compile_time_metaprogramming
+    * https://www.youtube.com/watch?v=hLBahy6lPWI
+    * https://www.slideshare.net/SpringCentral/groovy-asttransforms-paulkingsep2014
+    * http://melix.github.io/ast-workshop/
+    * https://eli.thegreenplace.net/2009/02/16/abstract-vs-concrete-syntax-trees
+    * http://emmanuelrosa.com/articles/how-to-create-your-first-groovy-ast-transformation/
 
+## preface
+* goals of this workshop:
+    * AST, CST definitions
+    * groovy AST transformations
+    * java AST transformations (lombok digression)
+* workshop: `workshop` package, answers: `answers` package
+
+## project 
     /**
      * The method is invoked when an AST Transformation is active. For local transformations, it is invoked once
      * each time the local annotation is encountered. For global transformations, it is invoked once for every source
@@ -28,8 +31,7 @@
      */
     void visit(ASTNode nodes[], SourceUnit source);
     
-    https://github.com/mtumilowicz/java-annotations-retention-policy
-# Abstract Syntax Tree (AST) 
+## Abstract Syntax Tree (AST) 
 * is a tree representation of the abstract syntactic structure of source code written in a programming language
 * each node of the tree denotes a construct occurring in the source code
 * does not represent every detail appearing in the real syntax, but rather just the structural or content-related 
@@ -53,7 +55,7 @@ details (abstract)
     compiler. For example, it may store the position of each element in the source code, allowing the compiler to print 
     useful error messages.
     
-# AST vs CST
+### AST vs CST
 * CST is a one-to-one mapping from the grammar to a tree-form
 * `return a + 2`
     * CST
@@ -61,7 +63,7 @@ details (abstract)
     * AST
         ![alt text](img/ast.png)
 
-# compile-time metaprogramming
+## compile-time metaprogramming
 * Compile-time metaprogramming in Groovy allows code generation at compile-time.
 * Those transformations are altering the Abstract Syntax Tree (AST) of a program, which is why in Groovy we call it 
 AST transformations. 
@@ -129,4 +131,5 @@ continue the compilation process to generate regular bytecode.
                 (Java class versions of Groovy classes using ASM)
             * **Output**: binary output (`.class` file) written to file system
             * **Finalization**: compiler releases its resources
-# lombok digression
+### lombok digression
+* https://github.com/rzwitserloot/lombok/blob/master/src/core/lombok/AllArgsConstructor.java
