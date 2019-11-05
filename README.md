@@ -97,8 +97,19 @@ continue the compilation process to generate regular bytecode.
         ![alt text](img/middle-stages.png)
         * checks if a class is on the classpath
         * phases:
-            * **Semantic Analysis**
-            * **Canonicalization**
+            * **Semantic Analysis**: resolves classes and performs consistency and validity checks beyond what the 
+            grammar can provide
+                * key classes: `StaticVerifier` (check non-static access in static contexts), `ResolveVisitor`(try to 
+                find the `Class` for a `ClassExpression` and prints an error if it fails to do so), 
+                `StaticImportVisitor`, `InnerClassVisitor`, `AnnotationCollector` (used with aliases)
+                * transformations: `@Lazy`, `@Builder`, `@Field`, `@Log`, `@Memoized`, `@PackageScope`, 
+                `@TailRecursive`, `@BaseScript`
+            * **Canonicalization**: finalizes the complete abstract syntax tree
+                * typically the last point at which you want to run a transformation
+                * key classes: `InnerClassCompletionVisitor`, `EnumCompletionVisitor`, `TraitComposer` (generating code 
+                for a classnode implementing a trait)
+                * transformations: `@Category`, `@Delegate`, `@EqualsAndHashCode`, `@Immutable`, `@Sortable`, 
+                `@WithReadLock`, `@WithWriteLock`, `@Singleton`, `@ToString`
             * **Instruction Selection**
     * **Later stages**: check the tree and convert it into byte code/class files
         ![alt text](img/later-stages.png)
