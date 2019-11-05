@@ -74,7 +74,7 @@ generate regular bytecode
     * global AST transformations are applied transparently, globally, as soon as they are found on compile classpath
     * local AST transformations are applied by annotating the source code with markers
 * example
-![alt text](img/groovy-ast-bytecode.png)
+    ![alt text](img/groovy-ast-bytecode.png)
     * very similar to JAVA (but not exact)
 * compiler
     * **Early stages**: read source code and convert into a sparse syntax tree
