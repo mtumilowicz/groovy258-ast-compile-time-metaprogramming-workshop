@@ -12,6 +12,7 @@
     * https://github.com/rzwitserloot/lombok/blob/master/src/core/lombok/AllArgsConstructor.java
     * https://github.com/rzwitserloot/lombok/blob/master/src/core/lombok/javac/handlers/HandleConstructor.java
 * https://github.com/groovy/groovy-core/blob/master/src/main/org/codehaus/groovy/transform/LogASTTransformation.java
+* https://eli.thegreenplace.net/2009/02/16/abstract-vs-concrete-syntax-trees
 
     /**
      * The method is invoked when an AST Transformation is active. For local transformations, it is invoked once
@@ -61,6 +62,14 @@ details (abstract)
     * An AST usually contains extra information about the program, due to the consecutive stages of analysis by the 
     compiler. For example, it may store the position of each element in the source code, allowing the compiler to print 
     useful error messages.
+# AST vs CST
+* CST is a one-to-one mapping from the grammar to a tree-form
+* `return a + 2`
+    * CST
+        ![alt text](img/cst.png)
+    * AST
+        ![alt text](img/ast-return.png)
+
 # compile-time metaprogramming
 * Compile-time metaprogramming in Groovy allows code generation at compile-time.
 * Those transformations are altering the Abstract Syntax Tree (AST) of a program, which is why in Groovy we call it 
@@ -87,11 +96,20 @@ continue the compilation process to generate regular bytecode.
                 * key classes: `CompilerConfiguration` (classpath, warning levels, jdk), `CompilationUnit` (we could 
                 add additional source units to the compilation)
             * **Parsing**
-                * Use (ANTLR) grammar to convert source code into token tree
+                * use (ANTLR) grammar to convert source code into token tree (concrete syntax tree - CST)
+                    * https://github.com/groovy/groovy-core/tree/master/src/main/org/codehaus/groovy/antlr
                 * key classes: `CompilationUnit`, `GroovyLexer`, `GroovyRecognizer`, `GroovyTokenTypes`
+            * **Conversion**
+                * CST -> AST
+                * first place to write AST visitors
+                * key classes: `AntlrParserPlugin`, `EnumVisitor`
     * **Middle stages**: iteratively build up a more dense and information rich version of the syntax tree
         ![alt text](img/middle-stages.png)
         * checks if a class is on the classpath
+        * phases:
+            * **Semantic Analysis**
+            * **Canonicalization**
+            * **Instruction Selection**
     * **Later stages**: check the tree and convert it into byte code/class files
         ![alt text](img/later-stages.png)
         * checks what java we use and style bytecode (`invokedynamic` since java 7)
