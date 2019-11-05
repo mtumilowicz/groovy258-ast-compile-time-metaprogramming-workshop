@@ -78,6 +78,7 @@ generate regular bytecode
     * very similar to JAVA (but not exact)
 * compiler
     * **Early stages**: read source code and convert into a sparse syntax tree
+        
         ![alt text](img/early-stages.png)
         * compiler doesn't care if class is on a classpath
         * `unresolved(String)` - at this point we doesn't know what `String` means
