@@ -20,41 +20,38 @@
 ## project 
 * overview of groovy AST transformations API
 * https://github.com/mtumilowicz/java-annotations-retention-policy
-* in short, we will always extending `AbstractASTTransformation` and implementing below method:
+* in short, we will always extend `AbstractASTTransformation` and implement:
     ```
     void visit(ASTNode nodes[], SourceUnit source);
     ```
     * method is invoked when an AST Transformation is active
     * for local transformations, it is invoked once each time the local annotation is encountered
     * for global transformations, it is invoked once for every source unit, which is typically a source file
-    * `ASTnodes nodes[]` - when the call was triggered
+    * `ASTnodes nodes[]`
         * `node[0]` is the `AnnotationNode` that triggered this annotation to be activated
-        * `node[1]` is the `AnnotatedNode` decorated, such as a `MethodNode` or `ClassNode`
+        * `node[1]` is the `AnnotatedNode` decorated, such as a `FieldNode`, `ImportNode`, `ClassNode`, `MethodeNode` 
+        and others: http://docs.groovy-lang.org/latest/html/api/org/codehaus/groovy/ast/AnnotatedNode.html
      * `SourceUnit source` - source unit being compiled - may contain several classes
     
 ## Abstract Syntax Tree (AST) 
 * is a tree representation of the abstract syntactic structure of source code written in a programming language
 * each node of the tree denotes a construct occurring in the source code
-* does not represent every detail appearing in the real syntax, but rather just the structural or content-related 
-details (abstract)
-    * grouping parentheses are implicit in the tree structure, so these do not have to be represented as 
-    separate nodes
+* does not represent every detail appearing in the real syntax - just the structural or content-related 
+details (therefore - abstract)
+    * grouping parentheses are implicit in the tree structure
     * syntactic construct like an if-condition-then expression may be denoted by means of a single node with 
     three branches
 * semantic analysis or context sensitive analysis is a process in compiler construction, usually after parsing, to 
     gather necessary semantic information from the source code
     * usually includes type checking, or makes sure a variable is declared before use
-* data structures widely used in compilers to represent the structure of program code
-* is usually the result of the syntax analysis phase of a compiler
 * has several properties that aid the further steps of the compilation process:
-    * An AST can be edited and enhanced with information such as properties and annotations for every element it 
-    contains. Such editing and annotation is impossible with the source code of a program, since it would imply 
-    changing it.
-    * Compared to the source code, an AST does not include inessential punctuation and delimiters (braces, semicolons, 
-    parentheses, etc.).
-    * An AST usually contains extra information about the program, due to the consecutive stages of analysis by the 
-    compiler. For example, it may store the position of each element in the source code, allowing the compiler to print 
-    useful error messages.
+    * AST can be easily edited and enhanced with information
+        * such editing is often very hard or even impossible with the source code of a program
+    * compared to the source code, an AST does not include inessential punctuation and delimiters
+    * an AST usually contains extra information about the program, due to the consecutive stages of analysis by the 
+    compiler
+        * example - it may store the position of each element in the source code, allowing the compiler to print 
+    useful error messages
     
 ### AST vs CST
 * CST is a one-to-one mapping from the grammar to a tree-form
