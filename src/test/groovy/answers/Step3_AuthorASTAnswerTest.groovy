@@ -4,7 +4,15 @@ import spock.lang.Specification
 
 class Step3_AuthorASTAnswerTest extends Specification {
 
-    def 'testASTTransformationShouldBeDebuggableFromIDE'() {
+    def 'check if field was not added to this class'() {
+        when:
+        $STEP3_AUTHOR_ANSWER
+
+        then:
+        thrown MissingPropertyException
+    }
+
+    def 'check if field was added to Foo class'() {
         expect:
         Foo.$STEP3_AUTHOR_ANSWER == 'MTU'
     }

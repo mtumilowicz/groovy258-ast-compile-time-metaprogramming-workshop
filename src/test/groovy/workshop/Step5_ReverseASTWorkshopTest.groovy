@@ -4,7 +4,7 @@ import spock.lang.Specification
 
 class Step5_ReverseASTWorkshopTest extends Specification {
 
-    def 'testShouldMirrorMethodCall'() {
+    def 'test should mirror methods from test() method in Foo class'() {
         given:
         def buffer = new ByteArrayOutputStream()
         System.out = new PrintStream(buffer)
@@ -13,7 +13,7 @@ class Step5_ReverseASTWorkshopTest extends Specification {
         new Foo().test()
 
         then:
-        buffer.toString() == 'Mirror mode!\r\nMirror mode2!\r\n'
+        buffer.toString() ==~ /^Mirror mode!\s*Mirror mode2!\s*$/
     }
 
     private class Foo {

@@ -4,12 +4,12 @@ import spock.lang.Specification
 
 class Step1_AuthorASTWorkshopTest extends Specification {
 
-    def 'testThatAuthorExists'() {
+    def 'check if field was added to this class'() {
         expect:
         $STEP1_AUTHOR_WORKSHOP == 'MTU'
     }
 
-    def 'testASTTransformationShouldBeDebuggableFromIDE'() {
+    def 'check if field was added to Foo class'() {
         expect:
         Foo.$STEP1_AUTHOR_WORKSHOP == 'MTU'
     }
