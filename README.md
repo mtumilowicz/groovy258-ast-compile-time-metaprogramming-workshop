@@ -74,10 +74,13 @@ to generate regular bytecode
     * global AST transformations are applied transparently, globally, as soon as they are found on compile classpath
     * local AST transformations are applied by annotating the source code with markers
 * example
-### compiler phases
-![alt text](img/groovy-ast-bytecode.png)
-very similar to JAVA (but not exact)
 
+## compiler
+### overview
+![alt text](img/groovy-ast-bytecode.png)
+
+very similar to JAVA (but not exact)
+### phases
 * **Early stages**: read source code and convert into a sparse syntax tree
     
     ![alt text](img/early-stages.png)
