@@ -129,21 +129,4 @@ continue the compilation process to generate regular bytecode.
                 (Java class versions of Groovy classes using ASM)
             * **Output**: binary output (`.class` file) written to file system
             * **Finalization**: compiler releases its resources
-* defined transformations
-    * EqualsAndHashCode - remember that for comparing references in groovy x.is y
-        * should be defined all down the structure
-    * @Lazy - understands double checked-locking
-        * http://docs.groovy-lang.org/docs/groovy-2.4.9/html/gapi/groovy/lang/Lazy.html
-    * @Singleton - http://docs.groovy-lang.org/latest/html/api/groovy/lang/Singleton.html
-    * @Sortable
-        * `*` operator
-    * @Builder
-    * @CompileStatic
-    * @Delegate
-    * @Memoized
-    * @Immutable - recursive
-    * @TailRecursive - use trampoline
-        * slide 40
-    * @Log, @Log4j
-    * WithReadLock, WithWriteLock
 # lombok digression
