@@ -63,17 +63,18 @@ details (therefore - abstract)
     
         ![alt text](img/ast.png)
 
-## compile-time metaprogramming
-* compile-time metaprogramming in Groovy allows code generation at compile-time
-* transformations are altering the Abstract Syntax Tree (AST) of a program, which is why in Groovy we call it 
-AST transformations
-* transformations allow you to hook into the compilation process, modify the AST and continue the compilation process to 
-generate regular bytecode
+## groovy's compile-time metaprogramming
+* allows code generation at compile-time
+* transformations are altering the Abstract Syntax Tree (AST) 
+* means AST transformations
+* transformations allow you to hook into the compilation process, modify the AST and continue the compilation process 
+to generate regular bytecode
 * compared to runtime metaprogramming, has the advantage of making the changes visible in the class file (bytecode)
 * AST transformations can be separated into two categories:
     * global AST transformations are applied transparently, globally, as soon as they are found on compile classpath
     * local AST transformations are applied by annotating the source code with markers
 * example
+
     ![alt text](img/groovy-ast-bytecode.png)
     * very similar to JAVA (but not exact)
 * compiler
