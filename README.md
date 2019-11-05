@@ -28,17 +28,6 @@
     void visit(ASTNode nodes[], SourceUnit source);
     
     https://github.com/mtumilowicz/java-annotations-retention-policy
-    
-    ```
-    while b ≠ 0
-      if a > b
-        a := a − b
-      else
-        b := b − a
-    return a
-    ```
-    ![alt text](img/AST.png)
-
 # Abstract Syntax Tree (AST) 
 * is a tree representation of the abstract syntactic structure of source code written in a programming language
 * each node of the tree denotes a construct occurring in the source code
@@ -62,13 +51,14 @@ details (abstract)
     * An AST usually contains extra information about the program, due to the consecutive stages of analysis by the 
     compiler. For example, it may store the position of each element in the source code, allowing the compiler to print 
     useful error messages.
+    
 # AST vs CST
 * CST is a one-to-one mapping from the grammar to a tree-form
 * `return a + 2`
     * CST
         ![alt text](img/cst.png)
     * AST
-        ![alt text](img/ast-return.png)
+        ![alt text](img/ast.png)
 
 # compile-time metaprogramming
 * Compile-time metaprogramming in Groovy allows code generation at compile-time.
