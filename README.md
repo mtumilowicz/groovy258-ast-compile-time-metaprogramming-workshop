@@ -76,10 +76,11 @@ to generate regular bytecode
 * example
 
 ## compiler
-### overview
-![alt text](img/groovy-ast-bytecode.png)
+* overview
 
-very similar to JAVA (but not exact)
+    ![alt text](img/groovy-ast-bytecode.png)
+    * very similar to JAVA (but not exact)
+    
 ### phases
 * **Early stages**: read source code and convert into a sparse syntax tree
     
