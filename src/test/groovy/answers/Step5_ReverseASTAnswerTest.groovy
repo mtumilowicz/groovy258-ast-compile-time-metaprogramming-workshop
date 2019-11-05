@@ -11,9 +11,8 @@ class Step5_ReverseASTAnswerTest extends Specification {
 
         when:
         new Foo().test()
-
         then:
-        buffer.toString() == 'Mirror mode!\r\nMirror mode2!\r\n'
+        buffer.toString() ==~ /^Mirror mode!\s*Mirror mode2!\s*$/
     }
 
     private class Foo {
