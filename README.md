@@ -57,8 +57,10 @@ details (therefore - abstract)
 * CST is a one-to-one mapping from the grammar to a tree-form
 * `return a + 2`
     * CST
+    
         ![alt text](img/cst.png)
     * AST
+    
         ![alt text](img/ast.png)
 
 ## compile-time metaprogramming
