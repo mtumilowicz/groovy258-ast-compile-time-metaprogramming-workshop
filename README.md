@@ -83,10 +83,11 @@
 * talk
     * slide 3 - AST conversion
     * similar to JAVA (not exact)
-    * 9 phase compiler - slide 4
+    * 9 phase compiler - slide 4, slide 55
         * early stages - compiler doesn't care for example about if you take class Foo instead of Bee and Foo is nowhere in a classpath
         * next slide - unresolved(String) - at this point we doesn't know what String means
         * medium stages - resolved(String)
+            * semantic analysis - is it on a classpath?
         * last - bytecode generations (check what java you use)
     * global transform - everywhere + service
     * local transform - annotation
@@ -95,4 +96,16 @@
         * should be defined all down the structure
     * @Lazy - understands double checked-locking
         * http://docs.groovy-lang.org/docs/groovy-2.4.9/html/gapi/groovy/lang/Lazy.html
+    * @Singleton - http://docs.groovy-lang.org/latest/html/api/groovy/lang/Singleton.html
+    * @Sortable
+        * `*` operator
+    * @Builder
+    * @CompileStatic
+    * @Delegate
+    * @Memoized
+    * @Immutable - recursive
+    * @TailRecursive - use trampoline
+        * slide 40
+    * @Log, @Log4j
+    * WithReadLock, WithWriteLock
 # lombok digression
