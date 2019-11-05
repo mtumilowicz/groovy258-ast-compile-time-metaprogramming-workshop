@@ -5,6 +5,7 @@
 * https://groovy-lang.org/metaprogramming.html#_compile_time_metaprogramming
 * https://www.ibm.com/developerworks/library/j-lombok/j-lombok-pdf.pdf
 * https://www.youtube.com/watch?v=hLBahy6lPWI
+* https://www.slideshare.net/SpringCentral/groovy-asttransforms-paulkingsep2014
 * http://melix.github.io/ast-workshop/
 * https://github.com/rzwitserloot/lombok/tree/master/src/core/lombok
     * https://github.com/rzwitserloot/lombok/tree/master/src/core/lombok/core
@@ -78,4 +79,20 @@
         * global AST transformations are applied transparently, globally, as soon as they are found on compile classpath
         * local AST transformations are applied by annotating the source code with markers. Unlike global AST transformations, local AST transformations may support parameters.
     
+    
+* talk
+    * slide 3 - AST conversion
+    * similar to JAVA (not exact)
+    * 9 phase compiler - slide 4
+        * early stages - compiler doesn't care for example about if you take class Foo instead of Bee and Foo is nowhere in a classpath
+        * next slide - unresolved(String) - at this point we doesn't know what String means
+        * medium stages - resolved(String)
+        * last - bytecode generations (check what java you use)
+    * global transform - everywhere + service
+    * local transform - annotation
+    * show how ToString looks
+    * EqualsAndHashCode - remember that for comparing references in groovy x.is y
+        * should be defined all down the structure
+    * @Lazy - understands double checked-locking
+        * http://docs.groovy-lang.org/docs/groovy-2.4.9/html/gapi/groovy/lang/Lazy.html
 # lombok digression
