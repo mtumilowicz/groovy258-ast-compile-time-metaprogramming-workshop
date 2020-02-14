@@ -67,9 +67,9 @@ details (therefore - abstract)
         ![alt text](img/ast.png)
 
 ## groovy's compile-time metaprogramming
+* actually it is identical with AST transformation
 * allows code generation at compile-time
 * transformations are altering the Abstract Syntax Tree (AST) 
-* means AST transformations
 * transformations allow you to hook into the compilation process, modify the AST and continue the compilation process 
 to generate regular bytecode
 * compared to runtime metaprogramming, has the advantage of making the changes visible in the class file (bytecode)
