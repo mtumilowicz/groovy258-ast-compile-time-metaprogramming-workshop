@@ -19,25 +19,9 @@
     * groovy AST transformations
     * java AST transformations (lombok digression)
 * workshop: `workshop` package, answers: `answers` package
-
-## project 
-* overview of groovy AST transformations API
-* https://github.com/mtumilowicz/java-annotations-retention-policy
-* in short, we will always extend `AbstractASTTransformation` and implement:
-    ```
-    void visit(ASTNode nodes[], SourceUnit source);
-    ```
-    * method is invoked when an AST Transformation is active
-    * for local transformations, it is invoked once each time the local annotation is encountered
-    * for global transformations, it is invoked once for every source unit, which is typically a source file
-    * `ASTnodes nodes[]`
-        * `node[0]` is the `AnnotationNode` that triggered this annotation to be activated
-        * `node[1]` is the `AnnotatedNode` decorated, such as a `FieldNode`, `ImportNode`, `ClassNode`, `MethodeNode` 
-        and others: http://docs.groovy-lang.org/latest/html/api/org/codehaus/groovy/ast/AnnotatedNode.html
-     * `SourceUnit source` - source unit being compiled - may contain several classes
     
 ## Abstract Syntax Tree (AST) 
-* is a tree representation of the abstract syntactic structure of source code written in a programming language
+* is a tree representation of the abstract syntactic structure of source code
 * each node of the tree denotes a construct occurring in the source code
 * does not represent every detail appearing in the real syntax - just the structural or content-related 
 details (therefore - abstract)
@@ -67,17 +51,15 @@ details (therefore - abstract)
         ![alt text](img/ast.png)
 
 ## groovy's compile-time metaprogramming
-* actually it is identical with AST transformation
 * allows code generation at compile-time
-* transformations are altering the Abstract Syntax Tree (AST) 
+* transformations are altering the Abstract Syntax Tree (AST): AST transformation
 * transformations allow you to hook into the compilation process, modify the AST and continue the compilation process 
 to generate regular bytecode
 * compared to runtime metaprogramming, has the advantage of making the changes visible in the class file (bytecode)
 * AST transformations can be separated into two categories:
     * global AST transformations are applied transparently, globally, as soon as they are found on compile classpath
-    * local AST transformations are applied by annotating the source code with markers
-* example
-
+    * local AST transformations are applied by annotating the source code
+    
 ## compiler
 * overview
 
@@ -85,7 +67,7 @@ to generate regular bytecode
     * very similar to JAVA (but not exact)
     
 ### phases
-* **Early stages**: read source code and convert into a sparse syntax tree
+* **Early stages**: read source code and convert into a syntax tree
     
     ![alt text](img/early-stages.png)
     * compiler doesn't care if class is on a classpath
@@ -139,5 +121,19 @@ to generate regular bytecode
             (Java class versions of Groovy classes using ASM)
         * **Output**: binary output (`.class` file) written to file system
         * **Finalization**: compiler releases its resources
-## lombok digression
-* https://github.com/rzwitserloot/lombok/blob/master/src/core/lombok/AllArgsConstructor.java
+        
+## project 
+* overview of groovy AST transformations API
+* https://github.com/mtumilowicz/java-annotations-retention-policy
+* in short, we will always extend `AbstractASTTransformation` and implement:
+    ```
+    void visit(ASTNode nodes[], SourceUnit source);
+    ```
+    * method is invoked when an AST Transformation is active
+    * for local transformations, it is invoked once each time the local annotation is encountered
+    * for global transformations, it is invoked once for every source unit, which is typically a source file
+    * `ASTnodes nodes[]`
+        * `node[0]` is the `AnnotationNode` that triggered this annotation to be activated
+        * `node[1]` is the `AnnotatedNode` decorated, such as a `FieldNode`, `ImportNode`, `ClassNode`, `MethodeNode` 
+        and others: http://docs.groovy-lang.org/latest/html/api/org/codehaus/groovy/ast/AnnotatedNode.html
+     * `SourceUnit source` - source unit being compiled - may contain several classes
