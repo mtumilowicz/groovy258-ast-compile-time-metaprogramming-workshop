@@ -17,7 +17,7 @@ class Step2_AuthorASTWorkshop extends AbstractASTTransformation {
             // hint: buildFromSpec
             // fieldNode
             // rest is quite identical to Step1
-            // field name: $STEP2_AUTHOR_ANSWER
+            // field name: $STEP2_AUTHOR_WORKSHOP
 
             it.addField field[0]
         }

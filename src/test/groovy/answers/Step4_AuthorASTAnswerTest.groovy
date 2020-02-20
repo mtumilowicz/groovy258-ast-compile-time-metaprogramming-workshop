@@ -6,7 +6,7 @@ class Step4_AuthorASTAnswerTest extends Specification {
 
     def 'check if field was not added to this class'() {
         when:
-        $STEP3_AUTHOR_ANSWER
+        $STEP4_AUTHOR_ANSWER
 
         then:
         thrown MissingPropertyException
